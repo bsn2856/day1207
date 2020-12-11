@@ -1,20 +1,32 @@
 package com.bsn.goods.pojo;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * 商品组合实体类
- */
-@ApiModel(description = "商品信息")
 public class Goods implements Serializable {
     //SPU
     private Spu spu;
     //SKU集合
     private List<Sku> skuList;
+
+    //..get..set..toString
+
+
+    public Goods(Spu spu, List<Sku> skuList) {
+        this.spu = spu;
+        this.skuList = skuList;
+    }
+
+    public Goods() {
+    }
+
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "spu=" + spu +
+                ", skuList=" + skuList +
+                '}';
+    }
 
     public Spu getSpu() {
         return spu;
